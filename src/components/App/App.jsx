@@ -6,6 +6,8 @@ import { ContactList } from '../ContactList/ContactList';
 import { Filter } from '../Filter/Filter';
 import { Container, Wrapper, Phonebook, Contacts } from './App.styled';
 
+const CONTACTS_KEY = 'contacts';
+
 export class App extends Component {
   state = {
     contacts: [
@@ -18,7 +20,7 @@ export class App extends Component {
   };
 
   componentDidMount = () => {
-    const contacts = localStorage.getItem('contacts');
+    const contacts = localStorage.getItem(CONTACTS_KEY);
     const parsedContacts = JSON.parse(contacts);
 
     if (parsedContacts) {
@@ -26,9 +28,9 @@ export class App extends Component {
     }
   };
 
-  componentDidUpdate = (prevProps, prevState) => {
+  componentDidUpdate = (_, prevState) => {
     if (this.state.contacts !== prevState.contacts) {
-      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+      localStorage.setItem(CONTACTS_KEY, JSON.stringify(this.state.contacts));
     }
   };
 
@@ -44,11 +46,11 @@ export class App extends Component {
 
     this.setState(prevState => ({
       contacts: [
-        ...prevState.contacts,
         {
           ...data,
           id: nanoid(),
         },
+        ...prevState.contacts,
       ],
     }));
   };
