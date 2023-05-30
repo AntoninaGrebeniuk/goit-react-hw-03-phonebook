@@ -17,25 +17,26 @@ export const Wrapper = styled.div`
   margin-bottom: 10px;
   width: 450px;
 
-  /* width: 100%; */
   padding: 20px;
   position: relative;
   border-radius: 3px;
-  border: 1px solid var(--grey-blue);
+  border: 1px solid ${p => p.theme.colors.greyBlue};
   -webkit-box-shadow: 0px 7px 16px -3px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 7px 16px -3px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 7px 16px -3px rgba(0, 0, 0, 0.5);
-  background: var(--grey-blue);
+  background: ${p => p.theme.colors.greyBlue};
 
   background: linear-gradient(
     to right,
-    var(--grey-blue) 0%,
-    var(--light-grey-blue) 29%,
-    var(--light-grey-blue) 50%,
-    var(--light-grey-blue) 71%,
-    var(--grey-blue) 100%
+    ${p => p.theme.colors.greyBlue} 0%,
+    ${p => p.theme.colors.lightGreyBlue} 29%,
+    ${p => p.theme.colors.lightGreyBlue} 50%,
+    ${p => p.theme.colors.lightGreyBlue} 71%,
+    ${p => p.theme.colors.greyBlue} 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='var(--grey-blue)', endColorstr='var(--light-grey-blue)', GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=${p =>
+    p.theme.colors.greyBlue}, endColorstr=${p =>
+    p.theme.colors.lightGreyBlue}, GradientType=1 );
 
   &:before {
     content: '';
@@ -49,13 +50,15 @@ export const Wrapper = styled.div`
 
 export const Phonebook = styled.h1`
   margin-bottom: 10px;
-  color: var(--white);
-  text-shadow: -2px -2px var(--dark-violet), 0 2px 0 var(--grey-violet);
+  color: ${p => p.theme.colors.white};
+  text-shadow: -2px -2px ${p => p.theme.colors.darkViolet},
+    0 2px 0 ${p => p.theme.colors.greyViolet};
 `;
 
 export const Contacts = styled.h2`
   margin-bottom: 10px;
   font-size: 26px;
-  color: var(--white);
-  text-shadow: -2px -2px var(--dark-violet), 0 2px 0 var(--grey-violet);
+  color: ${p => p.theme.colors.white};
+  text-shadow: -2px -2px ${p => p.theme.colors.darkViolet},
+    0 2px 0 ${p => p.theme.colors.greyViolet};
 `;

@@ -3,8 +3,9 @@ import styled from '@emotion/styled';
 export const FilterLabel = styled.label`
   margin-bottom: 10px;
   font-size: 20px;
-  color: var(--white);
-  text-shadow: -1px -1px var(--dark-violet), 0 1px 0 var(--grey-violet);
+  color: ${p => p.theme.colors.white};
+  text-shadow: -1px -1px ${p => p.theme.colors.darkViolet},
+    0 1px 0 ${p => p.theme.colors.greyViolet};
 `;
 
 export const FilterInput = styled.input`
@@ -14,17 +15,23 @@ export const FilterInput = styled.input`
   border: 0;
   width: 300px;
   box-sizing: border-box;
-  color: var(--white);
+  color: ${p => p.theme.colors.white};
   font-size: 16px;
   font-family: 'Courgette', cursive;
-  text-shadow: 1px 1px 1px #232323;
+  text-shadow: ${p => p.theme.colors.textShadow};
   border-radius: 25px;
-  background: var(--grey-blue);
-  caret-color: var(--white);
+  background: ${p => p.theme.colors.greyBlue};
+  caret-color: ${p => p.theme.colors.white};
 
-  background: linear-gradient(to bottom, var(--grey-blue) 0%, #565e79 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='var(--grey-blue)', endColorstr='#565e79', GradientType=0 );
-  transition: transform var(--cubic-bezier);
+  background: linear-gradient(
+    to bottom,
+    ${p => p.theme.colors.greyBlue} 0%,
+    ${p => p.theme.colors.paleGrey} 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=${p =>
+    p.theme.colors.greyBlue}, endColorstr=${p =>
+    p.theme.colors.paleGrey}, GradientType=0 );
+  transition: transform ${p => p.theme.colors.cubicBezier};
 
   &:hover,
   &:focus {
@@ -34,6 +41,6 @@ export const FilterInput = styled.input`
 
   &::placeholder {
     font-family: 'Courgette', cursive;
-    color: var(--placeholder-color);
+    color: ${p => p.theme.colors.placeholderColor};
   }
 `;
