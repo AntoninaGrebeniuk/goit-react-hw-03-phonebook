@@ -9,7 +9,6 @@ export const ContactForm = styled.form`
   margin-bottom: 20px;
   width: 350px;
 
-  /* width: 100%; */
   padding: 20px;
   position: relative;
   border-radius: 3px;
@@ -41,13 +40,13 @@ export const ContactForm = styled.form`
 
 export const ContactInput = styled.input`
   flex: 1;
-  padding: 1em 2em;
+  padding: 12px 32px;
   border: 0;
   width: 100%;
   box-sizing: border-box;
   color: var(--white);
-  font-size: 14px;
-  font-family: Open Sans, Arial, sans-serif;
+  font-size: 16px;
+  font-family: 'Courgette', cursive;
   text-shadow: 1px 1px 1px #232323;
   border-radius: 25px;
   background: var(--red);
@@ -55,12 +54,17 @@ export const ContactInput = styled.input`
 
   background: linear-gradient(to bottom, var(--red) 0%, var(--light-red) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='var(--red)', endColorstr='var(--light-red)', GradientType=0 );
+  transition: transform var(--cubic-bezier);
 
   &:hover,
   &:focus {
     outline: none;
-    transition: transform 0.15s ease;
     transform: scale(1.02);
+  }
+
+  &::placeholder {
+    font-family: 'Courgette', cursive;
+    color: var(--placeholder-color);
   }
 `;
 
@@ -78,6 +82,7 @@ export const SubmitBtn = styled.button`
     var(--yellow) 0%,
     var(--dark-yellow) 100%
   );
+
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='var(--yellow)', endColorstr='var(--dark-yellow)', GradientType=0 );
   border: 0;
   border-radius: 30px;
@@ -88,11 +93,11 @@ export const SubmitBtn = styled.button`
   font-size: 20px;
   font-weight: 500;
   text-shadow: -1px -1px var(--dark-orange), 0 1px 0 var(--light-orange);
+  transition: transform var(--cubic-bezier);
 
   &:hover,
   &:focus {
     outline: none;
-    transition: transform 0.15s ease;
     transform: scale(0.95);
   }
 `;

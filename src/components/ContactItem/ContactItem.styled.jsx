@@ -45,11 +45,12 @@ export const RemoveBtn = styled.button`
   /* border-radius: 50%; */
 
   text-shadow: -1px -1px var(--dark-orange), 0 1px 0 var(--light-orange);
+  transition: transform var(--cubic-bezier);
 
   &:hover,
   &:focus {
     outline: none;
-    transition: transform 0.15s ease;
-    transform: scale(0.95);
+
+    transform: scale(0.92);
   }
 `;
